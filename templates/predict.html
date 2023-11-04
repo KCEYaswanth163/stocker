@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+<body>
+{% block content %}
+<div style="background-color: #161b23;height:43rem;display:flex;justify-content: center;align-items: center;">
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction: %}
+            {% if prediction|length > 1 %}
+
+            <ul style="color:#fff;text-align: center;margin-top: 5%;list-style-type: none;">
+                {% for i in range(prediction|length) %}
+                <li>Day {{i+1}} : {{prediction[i]}}</li>
+                {% endfor %}
+            <ul>
+            {% else %}
+            <h1 style="color:#fff;text-align: center;margin-top: 5%;">The stock price will {{ prediction[0] }} $</h1>
+            
+            {% endif %}
+            <center><img style="height: 400px;border-radius:15%;" src="{{url_for('static', filename='stock1.png')}}"/></center> 
+            {% endif %}
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
+
+

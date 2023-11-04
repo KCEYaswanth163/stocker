@@ -1,0 +1,9 @@
+Flask
+pandas
+numpy
+gunicorn
+requests
+scikit-learn
+tensorflow
+matplotlib
+
